@@ -18,10 +18,14 @@ const Buttons = () => {
 
   useEffect(() => {
     initTheme(JSON.parse(localStorage.getItem('darkTheme')) || false)
-  }, [ initTheme ])
+  }, [initTheme])
 
   return (
-    <div className={`flex space-x-[5px] justify-center transition transform-gpu duration-500 ease-out ${playing ? 'translate-y-[45px]' : ''}`}>
+    <div
+      className={`flex space-x-[5px] justify-center transition transform-gpu duration-500 ease-out ${
+        playing ? 'translate-y-[45px]' : ''
+      }`}
+    >
       <div className="bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 w-[50px] h-[50px] inline-flex justify-center items-center rounded-[13px]">
         <svg
           data-plofier
@@ -73,12 +77,16 @@ export default function Player() {
         height: '1',
         width: '1',
         videoId: VIDEO_ID,
+        playerVars: {
+          origin: window.location.origin,
+          playsinline: 1
+        },
         events: {
           onReady: setReady
         }
       })
     }
-  }, [ setReady ])
+  }, [setReady])
 
   return (
     <div className="select-none">
