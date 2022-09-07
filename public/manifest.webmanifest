@@ -1,0 +1,14 @@
+{
+  "name": "Plofier: Listen lofi",
+  "short_name": "Plofier",
+  "description": "A simple web application for background music from the popular YouTube channel Lofi Girl. Just music, no GPU load, no ugly UI.",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": ".",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "display": "standalone",
+  "theme_color": "#e5e5e5"
+}
