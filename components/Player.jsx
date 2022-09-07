@@ -77,6 +77,7 @@ export default function Player() {
         height: '1',
         width: '1',
         videoId: VIDEO_ID,
+        host: 'https://www.youtube-nocookie.com',
         playerVars: {
           origin: window.location.origin,
           playsinline: 1
