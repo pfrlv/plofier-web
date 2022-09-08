@@ -5,15 +5,9 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <div className="antialiased">
-      <Head>
-        <title>PLOFIER</title>
-      </Head>
-
-      <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[65%] space-y-[25px] w-[300px]">
-        <Player />
-        <Footer />
-      </div>
+    <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[65%] space-y-[25px] w-[300px]">
+      <Player />
+      <Footer />
     </div>
   )
 }

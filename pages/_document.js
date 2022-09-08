@@ -5,6 +5,30 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <title>Plofier</title>
+        <meta
+          name="description"
+          content="Work, study and relax with simple web app for background music"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Plofier | Lofi player" />
+        <meta
+          name="twitter:description"
+          content="Work, study and relax with simple web app for background music"
+        />
+        <meta name="twitter:image" content="/share_1200-630.png" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Plofier | Lofi player" />
+        <meta
+          property="og:description"
+          content="Work, study and relax with simple web app for background music"
+        />
+        <meta property="og:image" content="/share_1200-630.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -66,10 +90,11 @@ export default function Document() {
 
         <Script
           src="https://www.youtube.com/iframe_api"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         ></Script>
       </Head>
-      <body className="cursor-default">
+
+      <body className="cursor-default antialiased">
         <Main />
         <NextScript />
       </body>
