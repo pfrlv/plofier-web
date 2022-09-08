@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div
       className={`editor text-xs text-neutral-400 max-w-[300px] text-center transition duration-500 ease-out transform-gpu ${playing ? 'translate-y-[35px] opacity-0 pointer-events-none' : ''}`}>
-      A simple web application for background music from the popular
+      A simple web app for background music from the popular
       YouTube channel{' '}
       <a
         href="https://www.youtube.com/c/LofiGirl"
