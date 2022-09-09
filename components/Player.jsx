@@ -2,12 +2,13 @@ import {
   RiPlayFill,
   RiMoonClearLine,
   RiSunFill,
-  RiPauseFill
+  RiPauseFill,
+  RiLoader4Line
 } from 'react-icons/ri'
 
-import { memo, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
-import appStore from '@/stores/app'
+import app from '@/stores/app'
 import { useSnapshot } from 'valtio'
 
 import { VIDEO_ID } from '../constants'
@@ -26,7 +27,7 @@ const Button = ({ onClick, children }) => {
 }
 
 const Plofier = () => {
-  const { playing } = useSnapshot(appStore)
+  const { playing } = useSnapshot(app)
   return (
     <div className="bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 w-[50px] h-[50px] inline-flex justify-center items-center rounded-[13px]">
       <svg
@@ -46,10 +47,18 @@ const Plofier = () => {
 }
 
 const PlayButton = () => {
-  const { togglePlaying, playing, ready } = useSnapshot(appStore)
+  const { togglePlaying, playing, ready } = useSnapshot(app)
+
+  if (!ready) {
+    return (
+      <Button>
+        <RiLoader4Line fontSize={ICON_SIZE} className="animate-spin" />
+      </Button>
+    )
+  }
 
   return (
-    <Button onClick={ready && togglePlaying}>
+    <Button onClick={ready ? togglePlaying : undefined}>
       {playing ? (
         <RiPauseFill fontSize={ICON_SIZE} />
       ) : (
@@ -60,7 +69,7 @@ const PlayButton = () => {
 }
 
 const ThemeButton = () => {
-  const { initTheme, toggleTheme, darkTheme } = useSnapshot(appStore)
+  const { initTheme, toggleTheme, darkTheme } = useSnapshot(app)
 
   useEffect(() => {
     initTheme(JSON.parse(localStorage?.getItem('darkTheme')) || false)
@@ -77,11 +86,10 @@ const ThemeButton = () => {
   )
 }
 
-export default function Player() {
-  const { setReady, playing } = useSnapshot(appStore)
-
+const YoutubeIframe = () => {
   const playerRef = useRef()
-  const instanceContainerRef = useRef()
+  const containerRef = useRef()
+  const { setReady, playing } = useSnapshot(app)
 
   useEffect(() => {
     if (!playerRef.current) return
@@ -91,7 +99,7 @@ export default function Player() {
 
   useEffect(() => {
     global.onYouTubeIframeAPIReady = () => {
-      playerRef.current = new global.YT.Player(instanceContainerRef.current, {
+      playerRef.current = new global.YT.Player(containerRef.current, {
         height: '1',
         width: '1',
         videoId: VIDEO_ID,
@@ -107,9 +115,15 @@ export default function Player() {
     }
   }, [setReady])
 
+  return <div ref={containerRef} className="hidden" hidden />
+}
+
+export default function Player() {
+  const { playing } = useSnapshot(app)
+
   return (
     <div className="select-none">
-      <div ref={instanceContainerRef} className="hidden" hidden />
+      <YoutubeIframe />
 
       <div
         style={{ '--tw-translate-y': playing ? '45px' : '0px' }}
