@@ -1,0 +1,13 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 30C0 13.4315 13.4315 0 30 0H120C136.569 0 150 13.4315 150 30V120C150 136.569 136.569 150 120 150H30C13.4315 150 0 136.569 0 120V30Z" fill="#F5F5F5"/>
+<path d="M121.182 45.1849C130.919 58.4939 118.204 82.6989 92.7813 99.2481C67.3587 115.797 38.8557 118.424 29.1182 105.115C19.3806 91.8061 32.0959 67.6012 57.5186 51.0519C82.9412 34.5026 111.444 31.8759 121.182 45.1849Z" fill="#171717">
+<animateTransform
+  attributeName="transform"
+  attributeType="XML"
+  type="rotate"
+  from="0 75 75"
+  to="360 75 75"
+  dur="20s"
+  repeatCount="indefinite"/>
+</path>
+</svg>
