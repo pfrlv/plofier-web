@@ -1,6 +1,4 @@
 <img src="git-preview.svg" width="75" />
-<br />
-<br />
 
 ## Plofier
 
