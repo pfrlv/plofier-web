@@ -21,11 +21,11 @@ function useStreamAudio() {
       state.canplay = true
     }
 
-    audio.current.addEventListener('canplay', onCanPlay)
+    audio.current.addEventListener('loadedmetadata', onCanPlay)
 
     return () => {
       audio.current.pause()
-      audio.current.removeEventListener('canplay', onCanPlay)
+      audio.current.removeEventListener('loadedmetadata', onCanPlay)
     }
   }, [])
 
