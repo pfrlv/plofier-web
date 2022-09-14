@@ -87,11 +87,6 @@ export default function Document() {
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <link rel="manifest" href="/manifest.webmanifest" />
-
-        <Script
-          src="https://www.youtube.com/iframe_api"
-          strategy="afterInteractive"
-        ></Script>
       </Head>
 
       <body className="cursor-default antialiased">
