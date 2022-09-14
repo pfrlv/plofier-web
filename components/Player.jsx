@@ -6,14 +6,10 @@ import {
   RiLoader4Line
 } from 'react-icons/ri'
 
-import { useEffect, useRef } from 'react'
+import useStreamAudio from 'hooks/useStreamAudio'
+import useTheme from 'hooks/useTheme'
 
-import app from '@/stores/app'
-import { useSnapshot } from 'valtio'
-
-import { VIDEO_ID } from '../constants'
-
-const ICON_SIZE = 25
+const ICONS_SIZE = 25
 
 const Button = ({ onClick, children }) => {
   return (
@@ -27,7 +23,7 @@ const Button = ({ onClick, children }) => {
 }
 
 const Plofier = () => {
-  const { playing } = useSnapshot(app)
+  const { playing } = useStreamAudio()
   return (
     <div className="bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 w-[50px] h-[50px] inline-flex justify-center items-center rounded-[13px]">
       <svg
@@ -47,84 +43,47 @@ const Plofier = () => {
 }
 
 const PlayButton = () => {
-  const { togglePlaying, playing, ready } = useSnapshot(app)
+  const { playing, canplay, play, pause } = useStreamAudio()
 
-  if (!ready) {
+  if (!canplay) {
     return (
       <Button>
-        <RiLoader4Line fontSize={ICON_SIZE} className="animate-spin" />
+        <RiLoader4Line fontSize={ICONS_SIZE} className="animate-spin" />
       </Button>
     )
   }
 
   return (
-    <Button onClick={ready ? togglePlaying : undefined}>
+    <Button onClick={playing ? pause : play}>
       {playing ? (
-        <RiPauseFill fontSize={ICON_SIZE} />
+        <RiPauseFill fontSize={ICONS_SIZE} />
       ) : (
-        <RiPlayFill fontSize={ICON_SIZE} />
+        <RiPlayFill fontSize={ICONS_SIZE} />
       )}
     </Button>
   )
 }
 
 const ThemeButton = () => {
-  const { initTheme, toggleTheme, darkTheme } = useSnapshot(app)
-
-  useEffect(() => {
-    initTheme(JSON.parse(localStorage?.getItem('darkTheme')) || false)
-  }, [initTheme])
+  const { toggleTheme, darkTheme } = useTheme()
 
   return (
     <Button onClick={toggleTheme}>
       {darkTheme ? (
-        <RiSunFill fontSize={ICON_SIZE} />
+        <RiSunFill fontSize={ICONS_SIZE} />
       ) : (
-        <RiMoonClearLine fontSize={ICON_SIZE} />
+        <RiMoonClearLine fontSize={ICONS_SIZE} />
       )}
     </Button>
   )
 }
 
-const YoutubeIframe = () => {
-  const playerRef = useRef()
-  const containerRef = useRef()
-  const { setReady, playing } = useSnapshot(app)
-
-  useEffect(() => {
-    if (!playerRef.current) return
-
-    playing ? playerRef.current.playVideo() : playerRef.current.pauseVideo()
-  }, [playing])
-
-  useEffect(() => {
-    global.onYouTubeIframeAPIReady = () => {
-      playerRef.current = new global.YT.Player(containerRef.current, {
-        height: '1',
-        width: '1',
-        videoId: VIDEO_ID,
-        host: 'https://www.youtube-nocookie.com',
-        playerVars: {
-          origin: global.location.origin,
-          playsinline: 1
-        },
-        events: {
-          onReady: setReady
-        }
-      })
-    }
-  }, [setReady])
-
-  return <div ref={containerRef} className="hidden" hidden />
-}
 
 export default function Player() {
-  const { playing } = useSnapshot(app)
+  const { playing } = useStreamAudio()
 
   return (
     <div className="select-none">
-      <YoutubeIframe />
-
       <div
         style={{ '--tw-translate-y': playing ? '45px' : '0px' }}
         className="flex space-x-[5px] justify-center transition transform-gpu duration-500 ease-out"

@@ -2,12 +2,12 @@
 
 ## Plofier
 
-A simple web app for background music from the popular YouTube channel [LofiGirl](https://www.youtube.com/c/LofiGirl).
+A simple web app for background music from the [Box Radio](https://boxradio.net/).
 <br />Just music, no GPU load, no ugly UI.
 
 ### How it works
 
-Everything is simple: endless stream [lofi hip hop radio - beats to relax/study to](https://www.youtube.com/watch?v=jfKfPfyJRdk&ab_channel=LofiGirl), hidden iframe and YT.Player.
+Everything is simple: endless stream [Box Radio: Lofi Station](https://boxradio.net/radio/).
 
 ### Roadmap
 
