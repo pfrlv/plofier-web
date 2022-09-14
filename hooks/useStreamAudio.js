@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useRef } from 'react'
 import { useSnapshot, proxy } from 'valtio'
 
-const STREAM_URL = 'https://boxradio-edge-08.streamafrica.net/lofi'
+const STREAM_URL = 'https://play.streamafrica.net/lofiradio'
 
 const state = proxy({
   canplay: false,
