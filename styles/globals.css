@@ -7,15 +7,11 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
-
-  body {
-    @apply bg-neutral-200 dark:bg-neutral-800;
-  }
 }
 
 @layer components {
   .editor a {
-    @apply text-neutral-500 hover:text-neutral-400 transition-colors;
+    @apply text-white/80 sm:text-gray-600 hover:text-white sm:hover:text-gray-900 transition-colors;
   }
   .editor svg {
     @apply inline-block -mt-[2.5px];

@@ -1,21 +1,13 @@
-import {
-  RiPlayFill,
-  RiMoonClearLine,
-  RiSunFill,
-  RiPauseFill,
-  RiLoader4Line
-} from 'react-icons/ri'
+import { RiPlayMiniFill, RiPauseMiniFill, RiLoaderFill } from 'react-icons/ri'
 
 import useStreamAudio from 'hooks/useStreamAudio'
-import useTheme from 'hooks/useTheme'
-
-const ICONS_SIZE = 25
+import Footer from './Footer'
 
 const Button = ({ onClick, children }) => {
   return (
     <button
       onClick={onClick}
-      className="text-neutral-200 dark:text-neutral-900 uppercase tracking-wider text-xs bg-black dark:bg-neutral-50 h-[50px] w-[50px] inline-flex justify-center items-center rounded-[13px] active:scale-95 transition-transform"
+      className="text-black h-[50px] w-[50px] inline-flex justify-center items-center active:scale-95 transition-transform"
     >
       {children}
     </button>
@@ -25,10 +17,10 @@ const Button = ({ onClick, children }) => {
 const Plofier = () => {
   const { playing } = useStreamAudio()
   return (
-    <div className="bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 w-[50px] h-[50px] inline-flex justify-center items-center rounded-[13px]">
+    <div className="w-[50px] h-[50px] inline-flex justify-center items-center">
       <svg
         data-plofier
-        className={`w-[40px] block ${playing ? 'is-playing' : ''}`}
+        className={`w-[35px] block ${playing ? 'is-playing' : ''}`}
         viewBox="0 0 30 30"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +40,7 @@ const PlayButton = () => {
   if (!canplay) {
     return (
       <Button>
-        <RiLoader4Line fontSize={ICONS_SIZE} className="animate-spin" />
+        <RiLoaderFill fontSize={25} className="animate-spin" />
       </Button>
     )
   }
@@ -56,41 +48,34 @@ const PlayButton = () => {
   return (
     <Button onClick={playing ? pause : play}>
       {playing ? (
-        <RiPauseFill fontSize={ICONS_SIZE} />
+        <RiPauseMiniFill fontSize={40} />
       ) : (
-        <RiPlayFill fontSize={ICONS_SIZE} />
+        <RiPlayMiniFill fontSize={40} />
       )}
     </Button>
   )
 }
-
-const ThemeButton = () => {
-  const { toggleTheme, darkTheme } = useTheme()
-
-  return (
-    <Button onClick={toggleTheme}>
-      {darkTheme ? (
-        <RiSunFill fontSize={ICONS_SIZE} />
-      ) : (
-        <RiMoonClearLine fontSize={ICONS_SIZE} />
-      )}
-    </Button>
-  )
-}
-
 
 export default function Player() {
-  const { playing } = useStreamAudio()
-
   return (
-    <div className="select-none">
+    <div className="flex flex-wrap justify-center">
       <div
-        style={{ '--tw-translate-y': playing ? '45px' : '0px' }}
-        className="flex space-x-[5px] justify-center transition transform-gpu duration-500 ease-out"
-      >
-        <Plofier />
-        <PlayButton />
-        <ThemeButton />
+        className="select-none bg-white px-[5px] py-[5px] mb-[25px] sm:mb-0">
+        <div className="flex space-x-[5px] justify-center items-center">
+          <Plofier />
+
+          <span className="h-[50px] w-[1px] bg-black/10"></span>
+
+          <PlayButton />
+
+          <div className="hidden sm:block">
+            <Footer />
+          </div>
+        </div>
+      </div>
+
+      <div className="sm:hidden text-center">
+        <Footer />
       </div>
     </div>
   )
