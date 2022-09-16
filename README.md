@@ -3,7 +3,6 @@
 ## Plofier
 
 A simple web app for background Lofi music from the [Box Radio](https://boxradio.net/).
-<br />Work, study and relax.
 
 ### Roadmap
 
@@ -16,4 +15,4 @@ A simple web app for background Lofi music from the [Box Radio](https://boxradio
 
 ### Tech
 
-Next.js, Tailwind CSS and React Icons, React Three Fiber, deploy to Vercel
+[Next.js](https://nextjs.org/), [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) for background vizualization, [Tailwind CSS](https://tailwindcss.com/) and deployed with Vercel.
