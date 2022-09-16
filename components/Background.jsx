@@ -2,7 +2,7 @@ import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { useRef, useEffect } from 'react'
 import { Vector2 } from 'three'
 
-import useStreamAudio from 'hooks/useStreamAudio'
+import useStreamAudio from '@hooks/use-stream-audio'
 import '../materials/PlofierMaterial'
 
 

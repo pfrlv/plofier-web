@@ -1,6 +1,6 @@
 import { RiPlayMiniFill, RiPauseMiniFill, RiLoaderFill } from 'react-icons/ri'
 
-import useStreamAudio from 'hooks/useStreamAudio'
+import useStreamAudio from '@hooks/use-stream-audio'
 import Footer from './Footer'
 
 const Button = ({ onClick, children }) => {
