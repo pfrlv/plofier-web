@@ -1,6 +1,5 @@
 import Background from '@/components/Background'
 import Player from '@/components/Player'
-import Footer from '@/components/Footer'
 
 export default function Home() {
   return (

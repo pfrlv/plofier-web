@@ -2,7 +2,7 @@
 
 ## Plofier
 
-A simple web app for background music from the [Box Radio](https://boxradio.net/).
+A simple web app for background Lofi music from the [Box Radio](https://boxradio.net/).
 <br />Work, study and relax.
 
 ### Roadmap

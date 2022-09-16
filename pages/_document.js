@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Script from 'next/script'
 
 export default function Document() {
   return (
@@ -15,7 +14,7 @@ export default function Document() {
         <meta name="twitter:title" content="Plofier | Lofi player" />
         <meta
           name="twitter:description"
-          content="Work, study and relax with simple web app for background music"
+          content="Work, study and relax with simple web app for background Lofi music"
         />
         <meta name="twitter:image" content="/share_1200-630.png" />
 
@@ -23,7 +22,7 @@ export default function Document() {
         <meta property="og:title" content="Plofier | Lofi player" />
         <meta
           property="og:description"
-          content="Work, study and relax with simple web app for background music"
+          content="Work, study and relax with simple web app for background Lofi music"
         />
         <meta property="og:image" content="/share_1200-630.png" />
         <meta property="og:image:width" content="1200" />
@@ -85,11 +84,27 @@ export default function Document() {
           rel="apple-touch-startup-image"
         />
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="manifest" href="/manifest.webmanifest" />
-      </Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        ></meta>
 
-      <body className="cursor-default antialiased">
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+
+        <link rel="manifest" href="/manifest.webmanifest" />
+
+        <link
+          rel="preload"
+          as="audio"
+          href="https://play.streamafrica.net/lofiradio"
+        />
+      </Head>
+      <body className="cursor-default antialiased overflow-hidden">
         <Main />
         <NextScript />
       </body>
