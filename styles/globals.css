@@ -15,10 +15,7 @@
 
 @layer components {
   .editor a {
-    @apply text-white/80 sm:text-gray-600 hover:text-white sm:hover:text-gray-900 transition-colors;
-  }
-  .editor svg {
-    @apply inline-block -mt-[2.5px];
+    @apply text-white/50 sm:text-black/50 hover:text-white sm:hover:text-black transition-colors;
   }
   [data-plofier] {
     animation: Rotation 24s linear infinite;
