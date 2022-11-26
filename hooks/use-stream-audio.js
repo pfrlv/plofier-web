@@ -1,7 +1,7 @@
 import { useEffect, useCallback, useRef } from 'react'
 import { useSnapshot, proxy } from 'valtio'
 
-const STREAM_URL = 'https://play.streamafrica.net/lofiradio'
+const STREAM_URL = 'https://plofier.streamafrica.net/lofi'
 
 const state = proxy({
   canplay: false,
@@ -28,7 +28,7 @@ function useStreamAudio() {
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: 'Lo-Fi, Chillhop, ChillJazz, Sleep Music, Work Music etc.',
-        artist: 'LoFi Radio',
+        artist: 'Plofier / LoFi Radio',
         artwork: [
           { src: '/mediasession/96.png', sizes: '96x96', type: 'image/png' },
           { src: '/mediasession/128.png', sizes: '128x128', type: 'image/png' },
