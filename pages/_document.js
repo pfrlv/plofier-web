@@ -102,7 +102,7 @@ export default function Document() {
         <link
           rel="preload"
           as="audio"
-          href="https://play.streamafrica.net/lofiradio"
+          href="https://plofier.streamafrica.net/lofi"
         />
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`
