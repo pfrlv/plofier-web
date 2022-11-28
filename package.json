@@ -6,16 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
-    "start": "next start",
+    "start": "next start -H 127.0.4.99 -p 54990",
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.43.3",
+    "@react-three/drei": "^9.45.0",
     "@react-three/fiber": "^8.9.1",
     "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
+    "sharp": "^0.31.2",
     "three": "^0.146.0",
     "valtio": "^1.7.6"
   },
