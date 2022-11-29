@@ -20,7 +20,7 @@ export default function Home() {
 
       <Background />
 
-      <div className="absolute bottom-[25px] left-[50%] -translate-x-[50%]">
+      <div className="absolute bottom-[15px] sm:bottom-[25px] left-[50%] -translate-x-[50%]">
         <Player />
       </div>
     </>

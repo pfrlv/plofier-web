@@ -18,7 +18,7 @@ const ShaderPlane = () => {
   }, [size])
 
   useFrame(({}, delta) => {
-    if (!playing) return
+    // if (!playing) return
     materialRef.current.time += delta
   })
 

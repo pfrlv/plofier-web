@@ -15,7 +15,7 @@
 
 @layer components {
   .editor a {
-    @apply text-white/50 sm:text-black/50 hover:text-white sm:hover:text-black transition-colors;
+    @apply text-white/50 hover:text-white transition-colors;
   }
   [data-plofier] {
     animation: Rotation 24s linear infinite;
