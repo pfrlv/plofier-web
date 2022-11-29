@@ -2,12 +2,13 @@ import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { useRef, useEffect } from 'react'
 import { Vector2 } from 'three'
 
-import useStreamAudio from '@hooks/use-stream-audio'
+import usePlayer from '@/hooks/usePlayer'
 import '../materials/PlofierMaterial'
 
 
 const ShaderPlane = () => {
-  const { playing } = useStreamAudio()
+  const { playing } = usePlayer()
+
   const materialRef = useRef()
   const viewport = useThree((state) => state.viewport)
   const size = useThree((state) => state.size)

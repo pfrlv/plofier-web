@@ -5,12 +5,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Plofier</title>
-        <meta
-          name="description"
-          content="Work, study and relax with simple web app for background music"
-        />
-
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Plofier | Lofi player" />
         <meta
@@ -85,11 +79,6 @@ export default function Document() {
           rel="apple-touch-startup-image"
         />
 
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover"
-        ></meta>
-
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
@@ -114,6 +103,7 @@ export default function Document() {
         `}
         </Script>
       </Head>
+      
       <body className="cursor-default antialiased overflow-hidden">
         <Main />
         <NextScript />

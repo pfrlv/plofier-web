@@ -1,13 +1,13 @@
-import { RiPlayMiniFill, RiPauseMiniFill, RiLoaderFill } from 'react-icons/ri'
+import { RiPlayMiniFill, RiPauseMiniFill } from 'react-icons/ri'
 
-import useStreamAudio from '@hooks/use-stream-audio'
-import Footer from './Footer'
+import usePlayer from '@/hooks/usePlayer'
+import Footer from '@/components/Footer'
 
-const Button = ({ onClick, children }) => {
+const Button = ({ onClick, children, canplay = false }) => {
   return (
     <button
       onClick={onClick}
-      className="text-black h-[50px] w-[50px] inline-flex justify-center items-center active:scale-95 transition-transform"
+      className={`text-black h-[50px] w-[50px] inline-flex justify-center items-center active:scale-95 transition-transform ${!canplay && 'text-black/30 cursor-wait'}`}
     >
       {children}
     </button>
@@ -15,7 +15,7 @@ const Button = ({ onClick, children }) => {
 }
 
 const Plofier = () => {
-  const { playing } = useStreamAudio()
+  const { playing } = usePlayer()
   return (
     <div className="w-[50px] h-[50px] inline-flex justify-center items-center">
       <svg
@@ -35,18 +35,10 @@ const Plofier = () => {
 }
 
 const PlayButton = () => {
-  const { playing, canplay, play, pause } = useStreamAudio()
-
-  if (!canplay) {
-    return (
-      <Button>
-        <RiLoaderFill fontSize={25} className="animate-spin" />
-      </Button>
-    )
-  }
+  const { playing, canplay, play, pause } = usePlayer()
 
   return (
-    <Button onClick={playing ? pause : play}>
+    <Button onClick={playing ? pause : play} canplay={canplay}>
       {playing ? (
         <RiPauseMiniFill fontSize={40} />
       ) : (
