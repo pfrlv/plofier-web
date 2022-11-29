@@ -99,16 +99,18 @@ export default function Document() {
 
         <link rel="manifest" href="/manifest.webmanifest" />
 
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-JYTF9LDLXZ`}
+        />
+
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYTF9LDLXZ"></script>
-          <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
           
             gtag('config', 'G-JYTF9LDLXZ');
-          </script>
         `}
         </Script>
       </Head>
