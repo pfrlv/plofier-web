@@ -101,7 +101,6 @@ export default function Document() {
 
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
-          <!-- Google tag (gtag.js) -->
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYTF9LDLXZ"></script>
           <script>
             window.dataLayer = window.dataLayer || [];
