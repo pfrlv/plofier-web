@@ -19,7 +19,6 @@ const state = proxy({
 
 const initPlayer = () => {
   useEffect(() => {
-    if (state.audio) return
     state.audio = ref(new Audio(STREAM_URL))
 
     if ('mediaSession' in navigator) {
