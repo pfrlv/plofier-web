@@ -90,16 +90,16 @@ export default function Document() {
 
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-JYTF9LDLXZ`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-DGVJ306842`}
         />
 
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script id="google-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
           
-            gtag('config', 'G-JYTF9LDLXZ');
+            gtag('config', 'G-DGVJ306842');
         `}
         </Script>
       </Head>
