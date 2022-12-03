@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Plofier | Lofi player" />
@@ -10,6 +10,12 @@ export default function Document() {
           name="twitter:description"
           content="Work, study and relax with simple web app for background Lofi music"
         />
+
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        ></meta>
+
         <meta name="twitter:image" content="/share_1200-630.png" />
 
         <meta property="og:type" content="website" />
