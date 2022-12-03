@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Script from 'next/script'
 
 export default function Document() {
   return (
@@ -87,23 +86,8 @@ export default function Document() {
         />
 
         <link rel="manifest" href="/manifest.webmanifest" />
-
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-DGVJ306842`}
-        />
-
-        <Script id="google-tag">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-DGVJ306842');
-        `}
-        </Script>
       </Head>
-      
+
       <body className="cursor-default antialiased overflow-hidden">
         <Main />
         <NextScript />
