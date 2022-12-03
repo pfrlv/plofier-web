@@ -39,15 +39,16 @@ const PlayButton = () => {
 
 const GithubButton = () => {
   return (
-    <Button aria-label="Got to Github">
-      <a
-        href="https://github.com/pfrlv/plofier-web"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
+    <a
+      href="https://github.com/pfrlv/plofier-web"
+      rel="noopener noreferrer"
+      aria-label="Got to Github"
+      target="_blank"
+    >
+      <Button aria-label="Got to Github">
         <RiGithubFill fontSize={40} />
-      </a>
-    </Button>
+      </Button>
+    </a>
   )
 }
 
@@ -56,7 +57,6 @@ export default function Player() {
     <div className="flex flex-wrap justify-center">
       <div className="select-none bg-black/20 backdrop-blur-md px-[5px] py-[5px] mb-[25px] sm:mb-0 rounded-[17px]">
         <div className="flex justify-center items-center">
-
           <div className="flex space-x-[5px]">
             <PlayButton />
             <GithubButton />
