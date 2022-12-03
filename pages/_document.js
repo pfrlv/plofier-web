@@ -93,7 +93,7 @@ export default function Document() {
           src={`https://www.googletagmanager.com/gtag/js?id=G-DGVJ306842`}
         />
 
-        <Script id="google-tag" strategy="afterInteractive">
+        <Script id="google-tag">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
