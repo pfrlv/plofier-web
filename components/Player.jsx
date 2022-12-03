@@ -26,6 +26,7 @@ const PlayButton = () => {
     <Button
       onClick={playing ? pause : play}
       className={!canplay && '!text-white/30 !cursor-wait'}
+      aria-label="Toggle"
     >
       {playing ? (
         <RiPauseMiniFill fontSize={40} />
@@ -38,7 +39,7 @@ const PlayButton = () => {
 
 const GithubButton = () => {
   return (
-    <Button>
+    <Button aria-label="Got to Github">
       <a
         href="https://github.com/pfrlv/plofier-web"
         rel="noopener noreferrer"
