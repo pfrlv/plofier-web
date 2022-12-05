@@ -3,14 +3,24 @@ import { RiPlayMiniFill, RiPauseMiniFill, RiGithubFill } from 'react-icons/ri'
 import usePlayer from '@/hooks/usePlayer'
 import Footer from '@/components/Footer'
 
-const Button = ({ className, children, ...props }) => {
+const Button = ({ className, children, href, ...props }) => {
   let classNames = [
-    'text-white h-[50px] bg-white/5 rounded-[13px] w-[50px] inline-flex justify-center items-center active:scale-95 transition-transform',
+    'text-white h-[50px] bg-white/5 rounded-[13px] w-[50px] inline-flex justify-center items-center hover:ring-2 hover:ring-white/10 hover:ring-inset active:scale-95 transition',
     className
   ]
     .filter(Boolean)
     .join(' ')
     .trim()
+
+  console.log(props)
+
+  if (href) {
+    return (
+      <a className={classNames} href={href} {...props}>
+        {children}
+      </a>
+    )
+  }
 
   return (
     <button className={classNames} {...props}>
@@ -25,7 +35,7 @@ const PlayButton = () => {
   return (
     <Button
       onClick={playing ? pause : play}
-      className={!canplay && '!text-white/30 !cursor-wait'}
+      className={!canplay && '!text-white/30 pointer-events-none'}
       aria-label="Toggle"
     >
       {playing ? (
@@ -39,16 +49,14 @@ const PlayButton = () => {
 
 const GithubButton = () => {
   return (
-    <a
+    <Button
+      aria-label="Got to Github"
       href="https://github.com/pfrlv/plofier-web"
       rel="noopener noreferrer"
-      aria-label="Got to Github"
       target="_blank"
     >
-      <Button aria-label="Got to Github">
-        <RiGithubFill fontSize={40} />
-      </Button>
-    </a>
+      <RiGithubFill fontSize={40} />
+    </Button>
   )
 }
 

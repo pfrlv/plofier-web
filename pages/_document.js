@@ -11,11 +11,6 @@ export default function Document() {
           content="Work, study and relax with simple web app for background Lofi music"
         />
 
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover"
-        ></meta>
-
         <meta name="twitter:image" content="/share_1200-630.png" />
 
         <meta property="og:type" content="website" />

@@ -2,26 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @keyframes Rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-}
-
 @layer components {
   .editor a {
     @apply text-white/50 hover:text-white transition-colors;
-  }
-  [data-plofier] {
-    animation: Rotation 24s linear infinite;
-    animation-play-state: paused;
-  }
-  [data-plofier].is-playing {
-    animation-play-state: running;
   }
 }
