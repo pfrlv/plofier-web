@@ -12,8 +12,6 @@ const Button = ({ className, children, href, ...props }) => {
     .join(' ')
     .trim()
 
-  console.log(props)
-
   if (href) {
     return (
       <a className={classNames} href={href} {...props}>
