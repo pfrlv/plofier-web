@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useSnapshot, proxy, ref } from 'valtio'
 import { useMediaSession, useMediaMeta } from '@/hooks/useMediaSession'
 
-const STREAM_URL = 'https://plofier.streamafrica.net/lofi'
+const STREAM_URL = 'https://ss-edge.joeycast.com/lofi.mp3'
 let audio
 
 const state = proxy({
